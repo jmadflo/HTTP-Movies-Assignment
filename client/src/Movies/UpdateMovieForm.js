@@ -54,18 +54,15 @@ const UpdateMovieForm = props => {
     const putData = event => {
         event.preventDefault()
         console.log(formValues)
-        // turn stars back into an array
-        // setFormValues({
-        //     ...formValues,
-        //     
-        // })
+        
+        // turn stars back into array and metascore into number
         const valuesToSubmit = {
             ...formValues,
             metascore: parseInt(formValues.metascore),
             stars: formValues.stars.split(',')
         }
-        console.log(valuesToSubmit)
-        console.log(formValues)
+        // console.log(valuesToSubmit)
+        // console.log(formValues)
         axios.put(`http://localhost:5000/api/movies/${params.id}`, 
             valuesToSubmit
         )
