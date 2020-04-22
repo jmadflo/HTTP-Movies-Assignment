@@ -3,11 +3,12 @@ import axios from "axios"
 import { useParams, useHistory } from "react-router-dom"
 import MovieCard from "./MovieCard"
 
-function Movie ({addToSavedList}) {
+const Movie = ({addToSavedList}) => {
   const [movie, setMovie] = useState(null)
   const params = useParams()
   const history = useHistory()
 
+  // get movie with a specific id
   const fetchMovie = (id) => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
@@ -19,10 +20,12 @@ function Movie ({addToSavedList}) {
     addToSavedList(movie)
   }
 
+  // push user to the update movie url with the same id
   const goToEditMovie = () => {
-    history.push(`update-movie/${params.id}`)
+    history.push(`/update-movie/${params.id}`)
   }
 
+  // get movie data
   useEffect(() => {
     fetchMovie(params.id)
   }, [params.id])
