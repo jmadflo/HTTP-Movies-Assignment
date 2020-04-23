@@ -36,7 +36,7 @@ const App = () => {
         </Route>
 
         <Route path="/movies/:id">
-          <Movie addToSavedList={addToSavedList} />
+          <Movie renderCounter={renderCounter} setRenderCounter={setRenderCounter} addToSavedList={addToSavedList} />
         </Route>
 
         <Route path="/update-movie/:id">

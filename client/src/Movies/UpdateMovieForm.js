@@ -42,15 +42,6 @@ const UpdateMovieForm = props => {
         })
     }, [params.id]);
 
-    // useEffect(() => {
-    //     setFormValues({
-    //         ...formValues,
-    //         metascore: parseInt(formValues.metascore),
-    //         stars: [formValues.stars.split(',')]
-    //     })
-    //     console.log(formValues)
-    // }, [formValues])
-
     const putData = event => {
         event.preventDefault()
         console.log(formValues)

@@ -53,24 +53,28 @@ body {
   width: 75%;
   margin: 1rem auto;
 }
+
 .save-button {
   position: absolute;
-  top: 25px;
-  right: 100px;
+  top: 200px;
+  right: 160px;
   border: 1px solid grey;
+  border-radius: 5px;
   padding: 5px 10px;
   background-color: lightseagreen;
 }
 .save-button:hover {
-  background-color: green;
+  background-color: lightseagreen;
   color: white;
+  transform: scale(1.2,1.2)
 }
 
 .edit-button {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 200px;
+  right: 100px;
   border: 1px solid grey;
+  border-radius: 5px;
   padding: 5px 10px;
   background-color: #2D88FF;
 }
@@ -78,6 +82,23 @@ body {
 .edit-button:hover {
   background-color: #2D88FF;
   color: white;
+  transform: scale(1.2,1.2)
+}
+
+.delete-button {
+  position: absolute;
+  top: 200px;
+  right: 25px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: red;
+}
+
+.delete-button:hover {
+  background-color: red;
+  color: white;
+  transform: scale(1.2,1.2)
 }
 
 .home-button {
