@@ -82,21 +82,24 @@ const UpdateMovieForm = props => {
     }
 
     return (
-        <form>
-            <label htmlFor={'title'}>Title</label>
-            <input id='title' name='title' value={formValues.title} onChange={updateForm}/>
+        <div className="formContainer">
+            <form>
+                <label htmlFor={'title'}>Title</label>
+                <input id='title' name='title' value={formValues.title} onChange={updateForm}/>
 
-            <label htmlFor={'director'}>Director</label>
-            <input id='director' name='director' value={formValues.director} onChange={updateForm}/>
+                <label htmlFor={'director'}>Director</label>
+                <input id='director' name='director' value={formValues.director} onChange={updateForm}/>
 
-            <label htmlFor={'metascore'}>Metascore</label>
-            <input name='metascore' value={formValues.metascore} onChange={updateForm}/>
+                <label htmlFor={'metascore'}>Metascore</label>
+                <input name='metascore' value={formValues.metascore} onChange={updateForm}/>
 
-            <label htmlFor={'stars'}>Stars</label>
-            <input name='stars' value={formValues.stars} onChange={updateForm}/>
-
-            <button className='submitPutButton' onClick={putData}>Submit Put</button>
-        </form>
+                <label htmlFor={'stars'}>Stars</label>
+                <input name='stars' value={formValues.stars} onChange={updateForm}/>
+                <div className='formButtonContainer'>
+                    <button className='submitFormButton' onClick={putData}>Submit Put</button>
+                </div>
+            </form>
+        </div>
     )
 }
 

@@ -49,9 +49,11 @@ const Movie = props => {
   return (
     <div className="save-wrapper">
       <MovieCard movie={movie} />
-      <div className="save-button" onClick={saveMovie}>Save</div>
-      <div className="edit-button" onClick={goToEditMovie}>Edit</div>
-      <div className="delete-button" onClick={deleteMovie}>Delete</div>
+      <div className="cardButtonContainer">
+        <div className="save-button" onClick={saveMovie}>Save</div>
+        <div className="edit-button" onClick={goToEditMovie}>Edit</div>
+        <div className="delete-button" onClick={deleteMovie}>Delete</div>
+      </div>
     </div>
   )
 }
