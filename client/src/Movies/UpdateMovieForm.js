@@ -7,7 +7,7 @@ const UpdateMovieForm = props => {
         title: '',
         director: '',
         metascore: '',
-        stars: []
+        stars: ''
     })
 
     // will add to our url to target our put request
@@ -96,7 +96,7 @@ const UpdateMovieForm = props => {
                 <label htmlFor={'stars'}>Stars</label>
                 <input name='stars' value={formValues.stars} onChange={updateForm}/>
                 <div className='formButtonContainer'>
-                    <button className='submitFormButton' onClick={putData}>Submit Put</button>
+                    <button className='submitFormButton' onClick={putData}>Update Movie</button>
                 </div>
             </form>
         </div>

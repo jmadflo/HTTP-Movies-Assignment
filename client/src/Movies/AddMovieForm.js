@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 
-const addMovieForm = props => {
+const AddMovieForm = props => {
     const [ formValues, setFormValues ] = useState({
         title: '',
         director: '',
         metascore: '',
-        stars: []
+        stars: ''
     })
 
     // will use to push user to movie list after 
@@ -31,20 +31,11 @@ const addMovieForm = props => {
             metascore: parseInt(formValues.metascore),
             stars: formValues.stars.split(',')
         }
-        // setting state seems to be done in an async way because update is not done before put request, so I created the new variable valuesToSubmit
-        // setFormValues({
-        //     ...formValues,
-        //     metascore: parseInt(formValues.metascore),
-        //     stars: formValues.stars.split(',')
-        // })
         console.log(valuesToSubmit)
-        console.log(formValues)
-        axios.put(`http://localhost:5000/api/movies/${params.id}`, 
-            valuesToSubmit
-        )
+        axios.post(`http://localhost:5000/api/movies/`, valuesToSubmit)
             .then(() => {
+                //add to renderCounter to get updated movielist
                 props.setRenderCounter(props.renderCounter + 1)
-                console.log(formValues)
                 // reset form values after done editing
                 setFormValues({
                     title: '',
@@ -56,7 +47,7 @@ const addMovieForm = props => {
                 history.push('/')
             })
             .catch(error => {
-                alert('Was unable to update movie post', error)
+                alert('Was unable to post movie', error)
             })
     }
 
@@ -72,14 +63,14 @@ const addMovieForm = props => {
                 <label htmlFor={'metascore'}>Metascore</label>
                 <input name='metascore' value={formValues.metascore} onChange={updateForm}/>
 
-                <label htmlFor={'stars'}>Stars</label>
+                <label htmlFor={'stars'}>Stars (in a comma separated list)</label>
                 <input name='stars' value={formValues.stars} onChange={updateForm}/>
                 <div className='formButtonContainer'>
-                    <button className='submitFormButton' onClick={putData}>Submit Put</button>
+                    <button className='submitFormButton' onClick={postData}>Post Movie</button>
                 </div>
             </form>
         </div>
     )
 }
 
-export default addMovieForm
+export default AddMovieForm
