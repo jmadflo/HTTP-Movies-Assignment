@@ -5,6 +5,7 @@ import SavedList from "./Movies/SavedList"
 import MovieList from "./Movies/MovieList"
 import Movie from "./Movies/Movie"
 import UpdateMovieForm from './Movies/UpdateMovieForm'
+import AddMovieForm from './Movies/AddMovieForm'
 
 const App = () => {
   const [savedList, setSavedList] = useState([])
@@ -41,6 +42,10 @@ const App = () => {
 
         <Route path="/update-movie/:id">
           <UpdateMovieForm renderCounter={renderCounter} setRenderCounter={setRenderCounter}/>
+        </Route>
+
+        <Route exact path="/add-movie">
+          <AddMovieForm renderCounter={renderCounter} setRenderCounter={setRenderCounter}/>
         </Route>
       </Switch>
     </>

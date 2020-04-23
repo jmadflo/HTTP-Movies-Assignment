@@ -186,3 +186,19 @@ label {
   width: 100%;
   margin-top: -55px;
 }
+
+.addMovie {
+  padding: 5px 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 50%;
+}
+
+.addMovieContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
